@@ -4,6 +4,9 @@
     "description": "Gerador rápido de CPF",
     "version": "1.0",
     "permissions": [
+        "contextMenus",
+        "scripting",
+        "activeTab"
     ],
     "background": {
       "service_worker": "background.js"
