@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": "Gerador de CPF",
+    "description": "Gerador rápido de CPF",
+    "version": "1.0",
+    "permissions": [
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
