@@ -2,6 +2,7 @@
 
 function escreverCPF(){
     let cpf = GerarCPF()
+    cpf = AdicionarPontuacao(cpf)
 
     document.activeElement.value = cpf
 }
@@ -61,6 +62,18 @@ function GerarSegundoDigitoVerificador(cpf){
     }
 
     return digitoVerificador
+}
+
+function AdicionarPontuacao(cpf){
+    let cpfArray = cpf.split('')
+    
+    cpfArray.splice(3, 0, ".")
+    cpfArray.splice(7, 0, ".")
+    cpfArray.splice(11, 0, "-")
+
+    cpf = cpfArray.toString().replaceAll(',', '')
+
+    return cpf
 }
 
 escreverCPF()
