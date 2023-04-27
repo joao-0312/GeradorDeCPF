@@ -16,5 +16,10 @@
         "matches": ["*://*/*"],
         "js": ["gerarCPF.js"]
       }
-    ]
+    ],
+    "icons": {
+      "16": "icones/icon16.png",
+      "48": "icones/icon48.png",
+      "128": "icones/icon128.png"
+    }
   }
