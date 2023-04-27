@@ -10,5 +10,11 @@
     ],
     "background": {
       "service_worker": "background.js"
-    }
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["gerarCPF.js"]
+      }
+    ]
   }

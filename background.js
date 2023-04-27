@@ -9,10 +9,7 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener((item, tab) => {
     chrome.scripting.executeScript({
         target: {tabId: tab.id},
-        func: gerarCPF
+        files: ['gerarCPF.js']
     })
 })
 
-function gerarCPF(){
-    document.activeElement.value = "Funcionalidade ainda não implementada!"
-}
