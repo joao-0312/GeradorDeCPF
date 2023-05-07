@@ -14,4 +14,3 @@ chrome.contextMenus.onClicked.addListener((item, tab) => {
         files: ['gerarCPF.js']
     })
 })
-

@@ -6,7 +6,8 @@
     "permissions": [
         "contextMenus",
         "scripting",
-        "activeTab"
+        "activeTab",
+        "storage"
     ],
     "background": {
       "service_worker": "background.js"
@@ -21,5 +22,9 @@
       "16": "icones/icon16.png",
       "48": "icones/icon48.png",
       "128": "icones/icon128.png"
+    },
+    "action":
+    {
+      "default_popup": "popup.html"
     }
   }

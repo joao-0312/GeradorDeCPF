@@ -1,13 +1,12 @@
 "use strict"
 
-function escreverCPF(){
-    let cpf = GerarCPF()
-    cpf = AdicionarPontuacao(cpf)
+async function escreverCPF(){
+    let cpf = await GerarCPF()
 
     document.activeElement.value = cpf
 }
 
-function GerarCPF(){
+async function GerarCPF(){
     let cpf = []
 
     for (let i = 0; i < 9; i++){
@@ -17,6 +16,13 @@ function GerarCPF(){
 
     cpf.push(GerarPrimeiroDigitoVerificador(cpf))
     cpf.push(GerarSegundoDigitoVerificador(cpf))
+
+    await chrome.storage.sync.get(["cpfComPontuacao"]).then(result => {
+        if (result.cpfComPontuacao)
+        cpf = AdicionarPontuacao(cpf)
+
+        result.cpfComPontuacao 
+    })
 
     return cpf.toString().replaceAll(',', '')
 }
@@ -65,13 +71,11 @@ function GerarSegundoDigitoVerificador(cpf){
 }
 
 function AdicionarPontuacao(cpf){
-    let cpfArray = cpf.split('')
-    
-    cpfArray.splice(3, 0, ".")
-    cpfArray.splice(7, 0, ".")
-    cpfArray.splice(11, 0, "-")
+    cpf.splice(3, 0, ".")
+    cpf.splice(7, 0, ".")
+    cpf.splice(11, 0, "-")
 
-    cpf = cpfArray.toString().replaceAll(',', '')
+    cpf = cpf.toString().replaceAll(',', '')
 
     return cpf
 }
