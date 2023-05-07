@@ -1,3 +1,5 @@
+"use strict"
+
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
         id: 'cpf',
@@ -12,4 +14,3 @@ chrome.contextMenus.onClicked.addListener((item, tab) => {
         files: ['gerarCPF.js']
     })
 })
-
