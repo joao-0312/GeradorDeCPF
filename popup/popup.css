@@ -1,0 +1,16 @@
+body {
+    background-color: #EEEEEE;
+    width: max-content;
+}
+
+span {
+    font-size: 16px;
+}
+
+#checkbox {
+    display: none;
+}
+
+.texto {
+    color: #454545;
+}
